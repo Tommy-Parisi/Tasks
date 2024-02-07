@@ -16,3 +16,5 @@ You will, however, need to finish setting up the deployment.
 Back in this repository, go to `settings` -> `secrets` -> `Actions` and click the `New repository secret` button in the topright.
 
 Name the secret "GH_TOKEN" and paste in the token you copied in the previous step.
+
+Update README for GH_TOKEN setup.
