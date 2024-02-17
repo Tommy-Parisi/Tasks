@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import imgIMG_5882 from "./assets/IMG_5882.jpg";
+import mePic from "./assets/IMG_5882.jpg";
 
 function App(): JSX.Element {
     return (
@@ -31,7 +31,7 @@ function App(): JSX.Element {
                     </Col>
                     <Col>
                         <img
-                            src={imgIMG_5882}
+                            src={mePic}
                             alt="A picture of me"
                             style={{ width: "200px", height: "auto" }}
                         />
