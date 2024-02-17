@@ -103,5 +103,20 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let sum = 0;
+    let result = [...values];
+    //Find the index of the first negative number
+    const negativeIndex = values.findIndex((value) => value < 0);
+    if (negativeIndex !== -1) {
+        //Use slice to find the sum of the numbers before the negativeIndex
+        sum = result
+            .slice(0, negativeIndex)
+            .reduce((currentTotal, num) => currentTotal + num, 0);
+        result.splice(negativeIndex + 1, 0, sum);
+    } else {
+        //No negative values, calculate whole array
+        sum = result.reduce((curr, num) => curr + num, 0);
+        result.push(sum);
+    }
+    return result;
 }
