@@ -41,7 +41,7 @@ export function stringsToIntegers(numbers: string[]): number[] {
 export const removeDollars = (amounts: string[]): number[] => {
     return amounts.map((amount: string) => {
         const removedSign = amount[0] === "$" ? amount.substring(1) : amount;
-        return parseInt(amount) || 0;
+        return parseInt(removedSign) || 0;
     });
 };
 
@@ -72,7 +72,9 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    return colors.every(
+        (color) => color === "red" || color === "blue" || color === "green"
+    );
 }
 
 /**
@@ -83,7 +85,12 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    const equation = addends.length > 0 ? addends.join("+") : "0";
+    return `${sum}=${equation}`;
 }
 
 /**
