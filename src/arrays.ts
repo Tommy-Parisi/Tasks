@@ -104,7 +104,7 @@ export function makeMath(addends: number[]): string {
  */
 export function injectPositive(values: number[]): number[] {
     let sum = 0;
-    let result = [...values];
+    const result = [...values];
     //Find the index of the first negative number
     const negativeIndex = values.findIndex((value) => value < 0);
     if (negativeIndex !== -1) {
@@ -120,3 +120,4 @@ export function injectPositive(values: number[]): number[] {
     }
     return result;
 }
+//Comment added for git change
