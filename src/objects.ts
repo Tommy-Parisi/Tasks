@@ -42,6 +42,17 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
+    //let answerText = answer.trim().toLowerCase();
+    if (question.type === "short_answer_question") {
+        return true; //True for any short answer question
+    } else if (question.type === "multiple_choice_question") {
+        //let normalizedOptions = question.options.map((option) =>
+        //    option.toLowerCase().trim()
+        //);
+        if (question.options.includes(answer)) {
+            return true;
+        }
+    }
     return false;
 }
 
