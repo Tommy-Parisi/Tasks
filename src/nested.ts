@@ -37,7 +37,11 @@ export function findQuestion(
     id: number
 ): Question | null {
     const foundQuestion = questions.find((question) => question.id === id);
-    return foundQuestion !== undefined ? foundQuestion : null; //GPT helped me figure out to use udnefined
+    if (foundQuestion === undefined) {
+        return null;
+    } else {
+        return foundQuestion;
+    }
 }
 
 /**
@@ -45,7 +49,8 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    const updatedQuestions = questions.filter((question) => question.id !== id);
+    return updatedQuestions;
 }
 
 /***
