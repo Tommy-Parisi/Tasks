@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Card, Alert } from "react-bootstrap";
 import mePic from "./assets/IMG_5882.jpg";
 
 function App(): JSX.Element {
@@ -16,18 +16,20 @@ function App(): JSX.Element {
             <Container>
                 <Row>
                     <Col>
-                        <div
-                            style={{
-                                width: "500px",
-                                height: "10px",
-                                backgroundColor: "red"
-                            }}
-                        ></div>
-                        <ul>
-                            <li>University Of Delaware</li>
-                            <li>BS Computer Science</li>
-                            <li>Cybersecurity Concentration</li>
-                        </ul>
+                        <Card>
+                            <div
+                                style={{
+                                    width: "500px",
+                                    height: "10px",
+                                    backgroundColor: "red"
+                                }}
+                            ></div>
+                            <ul>
+                                <li>University Of Delaware</li>
+                                <li>BS Computer Science</li>
+                                <li>Cybersecurity Concentration</li>
+                            </ul>
+                        </Card>
                     </Col>
                     <Col>
                         <img
@@ -49,6 +51,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World
             </p>
+            <Alert>Warning: Stay off my website!</Alert>
         </div>
     );
 }
