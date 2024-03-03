@@ -12,30 +12,35 @@ export function d6(): number {
 }
 
 export function TwoDice(): JSX.Element {
-    const [leftDie, setLeftDie] = useState<number>(d6);
-    const [rightDie, setRightDie] = useState<number>(() => {
-        let roll = d6();
-        while (roll === leftDie) {
-            roll = d6();
-        }
-        return roll;
-    });
-    const rollLeft = () => setLeftDie(d6());
-    const rollRight = () => setRightDie(d6());
+    const [leftDie, setLeftDie] = useState(1);
+    const [rightDie, setRightDie] = useState(2);
 
-    const checkStatus = () => {
-        if (leftDie === rightDie) {
-            return leftDie === 1 ? "You Lose!" : "You Win!";
+    const rollLeft = () => {
+        const newRoll = d6();
+        setLeftDie(newRoll);
+    };
+
+    const rollRight = () => {
+        const newRoll = d6();
+        setRightDie(newRoll);
+    };
+
+    const gameStatus = () => {
+        if (leftDie === 1 && rightDie === 1) {
+            return "You Lose! (Snake Eyes)";
+        } else if (leftDie === rightDie) {
+            return "You Win!";
         }
         return "";
     };
+
     return (
         <div>
-            <Button onClick={rollLeft}>Roll Left</Button>
-            <span data-testid="left-die">{leftDie}</span>{" "}
-            <Button onClick={rollRight}>Roll Right</Button>
+            <button onClick={rollLeft}>Roll Left</button>
+            <span data-testid="left-die">{leftDie}</span>
+            <button onClick={rollRight}>Roll Right</button>
             <span data-testid="right-die">{rightDie}</span>
-            <p>{checkStatus()}</p>
+            <p>{gameStatus()}</p>
         </div>
     );
 }
