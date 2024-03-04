@@ -26,6 +26,16 @@ function App(): JSX.Element {
                     Log Hello World
                 </button>
             </header>
+            <ul>
+                <li>University Of Delaware</li>
+                <li>BS Computer Science</li>
+                <li>Cybersecurity Concentration</li>
+            </ul>
+            <img
+                src={mePic}
+                alt="A picture of me"
+                style={{ width: "200px", height: "auto" }}
+            />
             <hr></hr>
             <DoubleHalf></DoubleHalf>
             <hr></hr>
