@@ -15,7 +15,6 @@ import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
 import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 import { ChangeColor } from "./form-components/ChangeColor";
-import mePic from "./assets/IMG_5882.jpg";
 
 function App(): JSX.Element {
     return (
@@ -44,16 +43,6 @@ function App(): JSX.Element {
                 options={["a", "b", "c"]}
                 expectedAnswer="b"
             ></MultipleChoiceQuestion>
-            <ul>
-                <li>University Of Delaware</li>
-                <li>BS Computer Science</li>
-                <li>Cybersecurity Concentration</li>
-            </ul>
-            <img
-                src={mePic}
-                alt="A picture of me"
-                style={{ width: "200px", height: "auto" }}
-            />
             <hr></hr>
             <DoubleHalf></DoubleHalf>
             <hr></hr>
