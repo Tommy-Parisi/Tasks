@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Dropdown } from "react-bootstrap";
 
 export function MultipleChoiceQuestion({
     options,
@@ -7,9 +8,31 @@ export function MultipleChoiceQuestion({
     options: string[];
     expectedAnswer: string;
 }): JSX.Element {
+    //Model
+    const [choice, setChoice] = useState(options[0]);
+
+    //Control
+    const isCorrect = choice === expectedAnswer;
+
+    function handleSelect(event: React.ChangeEvent<HTMLSelectElement>) {
+        setChoice(event.target.value);
+    }
+
+    //View
     return (
         <div>
-            <h3>Multiple Choice Question</h3>
+            <select
+                value={choice}
+                onChange={handleSelect}
+                aria-label="Multiple choice options"
+            >
+                {options.map((option, index) => (
+                    <option key={index} value={option}>
+                        {option}
+                    </option>
+                ))}
+            </select>
+            <div>{isCorrect ? "✔️" : "❌"}</div>
         </div>
     );
 }
