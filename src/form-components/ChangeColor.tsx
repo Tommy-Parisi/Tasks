@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export function ChangeColor(): JSX.Element {
-    const [color, setColor] = useState("Red");
+    const [color, setColor] = useState("FFA500");
 
     const COLORS = [
         { label: "Red", value: "#FFA500" },
@@ -38,12 +38,12 @@ export function ChangeColor(): JSX.Element {
                 data-testid={"colored-box"}
                 style={{
                     backgroundColor: color,
-                    color: color,
+                    color: "white",
                     padding: "10px",
                     marginTop: "10px"
                 }}
             >
-                Selected Color
+                {color}
             </div>
         </div>
     );
