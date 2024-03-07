@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export function ChangeColor(): JSX.Element {
-    const [color, setColor] = useState("FFA500");
+    const [color, setColor] = useState("FF4500");
 
     const COLORS = [
-        { label: "Red", value: "#FFA500" },
+        { label: "Red", value: "#FF4500" },
         { label: "Green", value: "#008000" },
         { label: "Blue", value: "#0000FF" },
         { label: "Yellow", value: "#FFFF00" },
         { label: "Purple", value: "#800080" },
-        { label: "Orange", value: "#FF4500" },
+        { label: "Orange", value: "#FFA500" },
         { label: "Pink", value: "#FFC0CB" },
         { label: "Gray", value: "#808080" }
     ];
